@@ -1,0 +1,126 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Us to Server You Better</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            border-bottom: none;
+            padding: 1rem 1.5rem;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .form-group label {
+            color: white;
+        }
+        .form-control {
+            background-color: #333333;
+            color: white;
+            border: 1px solid #444444;
+        }
+        .form-control:focus {
+            background-color: #444444;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Create User Profile</h2>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="id_name">Name</label>
+                            {% render_field form.name class="form-control" %}
+                            {% if form.name.errors %}
+                                <div class="text-danger">{{ form.name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="id_age">Age</label>
+                            {% render_field form.age class="form-control" %}
+                            {% if form.age.errors %}
+                                <div class="text-danger">{{ form.age.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="id_gender">Gender</label>
+                            {% render_field form.gender class="form-control" %}
+                            {% if form.gender.errors %}
+                                <div class="text-danger">{{ form.gender.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="id_occupation">Occupation</label>
+                            {% render_field form.occupation class="form-control" %}
+                            {% if form.occupation.errors %}
+                                <div class="text-danger">{{ form.occupation.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="id_location">Location</label>
+                            {% render_field form.location class="form-control" %}
+                            {% if form.location.errors %}
+                                <div class="text-danger">{{ form.location.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="id_mobile">Mobile</label>
+                            {% render_field form.mobile class="form-control" %}
+                            {% if form.mobile.errors %}
+                                <div class="text-danger">{{ form.mobile.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.user_no class="form-control" %}
+                        {% if form.user_no.errors %}
+                            <div class="text-danger">{{ form.user_no.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
