@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nu&1yvqf)j^qz9yq1)6hp#f(-(al5haqzp))v6t&%4%1ex%tdo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'actions.thinking.in']
 
 
 SITE_ID = 2
@@ -115,14 +115,14 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 
-CSRF_TRUSTED_ORIGINS = ['https://eval.thinkingai.in']
+CSRF_TRUSTED_ORIGINS = ['https://actions.thinkingai.in']
 
 CORS_REPLACE_HTTPS_REFERER = True
 
 CSRF_COOKIE_DOMAIN = 'thinkingai.in'
 
 CORS_ORIGIN_WHITELIST = (
-    'eval.thinkingai.in',
+    'actions.thinkingai.in',
 )
 
 # Database
